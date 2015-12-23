@@ -108,7 +108,7 @@ var AwesomeProject = React.createClass({
             <Text style={styles.photoPrice }>$99</Text>
           </View>
           <View>
-          <Image source= {{ uri: 'https://gw.alicdn.com/bao/uploaded/TB1n8QiKVXXXXbsXFXXSutbFXXX.jpg_270x270Q90.jpg' }}
+          <Image source= {{ uri: 'https://gw.alicdn.com/bao/uploaded/TB1n8QiKVXXXXbsXFXXSutbFXXX.jpg_270x270Q90.jpg ' }}
             style={ styles.photoItem  }  />
             <Text style={styles.photoName}>ARFL JUYHS</Text>
             <Text style={styles.photoPrice }>$34.2</Text>
