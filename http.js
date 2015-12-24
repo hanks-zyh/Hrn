@@ -14,8 +14,29 @@ var {
   TouchableOpacity,
   ToastAndroid,
   Alert,
+  BackAndroid,
 } = React;
-var AwesomeProject = React.createClass({
+
+BackAndroid.addEventListener('hardwareBackPress', function() {
+  if(_navigator == null){
+    return false;
+  }
+  if(_navigator.getCurrentRoutes().length === 1){
+    return false;
+  }
+  _navigator.pop();
+  return true;
+});
+
+var _navigator ;
+var HttpView = React.createClass({
+
+
+  getInitialState: function(){
+    _navigator = this.props.navigator;
+    return {};
+  },
+
   getByFetch : function(){
     fetch('https://m.baidu.com' )
     .then((response) => response.text())
@@ -96,4 +117,5 @@ var styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+
+module.exports = HttpView;

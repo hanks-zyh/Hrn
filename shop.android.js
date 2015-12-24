@@ -16,12 +16,28 @@ var {
   ScrollView,
   ListView,
   TouchableOpacity,
+  BackAndroid,
 } = React;
-var AwesomeProject = React.createClass({
+
+BackAndroid.addEventListener('hardwareBackPress', function() {
+  if(_navigator == null){
+    return false;
+  }
+  if(_navigator.getCurrentRoutes().length === 1){
+    return false;
+  }
+  _navigator.pop();
+  return true;
+});
+
+var _navigator;
+
+var ShopView = React.createClass({
   openDrawer: function () {
       this.drawer.openDrawer();
   },
   getInitialState:function(){
+    _navigator = this.props.navigator;
     var ds = new ListView.DataSource( {rowHasChanged: (r1, r2) => r1 !== r2} );
     return {
       dataSource : ds.cloneWithRows(['CLOTHES','PACKAGES','SHOES',]),
@@ -29,8 +45,6 @@ var AwesomeProject = React.createClass({
   },
 
   render: function() {
-
-
     var navigationView = (
       <View style={{flex: 1, backgroundColor: '#fff'}}>
         <Image  source= {{ uri: 'http://img.hb.aicdn.com/735afbfa2f6fee24d1a10e1a22b23c63f707ea82281c3-ajdFRe_fw658' }} style={{  height:200 }} />
@@ -179,4 +193,4 @@ var styles = StyleSheet.create({
 
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+module.exports = ShopView;
