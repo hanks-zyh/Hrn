@@ -64,7 +64,7 @@ var AwesomeProject = React.createClass({
     var configureScence = this.configureScenceAndroid;
     return (
       <Navigator
-        ddebugOverlay={false}
+        debugOverlay={false}
         initialRoute={{ title: 'Main', id:'main'}}
         configureScence={{ configureScence }}
         renderScene={renderScene}
