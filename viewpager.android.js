@@ -120,16 +120,6 @@ var styles = StyleSheet.create({
     image: {
       flex: 1,
     },
-    likeButton: {
-      backgroundColor: 'rgba(0, 0, 0, 0.1)',
-      borderColor: '#333333',
-      borderWidth: 1,
-      borderRadius: 5,
-      flex: 1,
-      margin: 8,
-      padding: 8,
-    },
-
     viewPager: {
       flex: 1,
     },
