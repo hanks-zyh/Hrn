@@ -21,6 +21,8 @@ var HttpView = require('./http.js');
 var ShopView = require('./shop.android.js');
 var ViewPager = require('./viewpager.android.js');
 var UserInfoView = require('./userinfo.js');
+var NewsView = require('./news.js');
+
 var AwesomeProject = React.createClass({
 
   getInitialState: function(){
@@ -49,6 +51,9 @@ var AwesomeProject = React.createClass({
           <TouchableOpacity onPress={() => _navigator.push({title:'UserInfoView',id:'userinfo'})} style={ styles.button }>
             <Text>Userinfo</Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => _navigator.push({title:'NewsView',id:'news'})} style={ styles.button }>
+            <Text>News</Text>
+          </TouchableOpacity>
         </View>
        );
     }
@@ -72,6 +77,11 @@ var AwesomeProject = React.createClass({
     if(route.id === 'userinfo'){
       return (
         <UserInfoView navigator={navigator} route={route}/>
+      );
+    }
+    if(route.id === 'news'){
+      return (
+        <NewsView navigator={navigator} route={route}/>
       );
     }
 
